@@ -11,6 +11,7 @@ import java.util.List;
 
 @Controller
 public class SubjectController {
+    //ezt csináltuk 1003 órán elősször
     @Autowired
     SubjectService service;
     @GetMapping("/subjects/index")
