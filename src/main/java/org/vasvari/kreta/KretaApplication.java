@@ -23,6 +23,7 @@ public class KretaApplication {
 
 		// https://www.baeldung.com/swagger-2-documentation-for-spring-rest-api
 		// http://localhost:7777/v2/api-docs
+		// portszám 7777 ne felejtsük el!
 		@Configuration
 		@EnableSwagger2
 		@Import(SpringDataRestConfiguration.class)
