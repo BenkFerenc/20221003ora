@@ -17,6 +17,7 @@ public class SubjectController {
     @GetMapping("/subjects/index")
     public ModelAndView showSubjectList()
     {
+        //tantárgy lista
         List<Subject> subjects = service.getAllSubjects();
         ModelAndView mav=new ModelAndView("subjects/index");
         mav.addObject("subjects",subjects);
