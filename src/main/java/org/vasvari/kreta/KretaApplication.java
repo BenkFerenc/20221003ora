@@ -17,7 +17,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 //
 @SpringBootApplication
 public class KretaApplication {
-//sikeres futtatás
+//
 	public static void main(String[] args) {
 		SpringApplication.run(KretaApplication.class, args);
 
