@@ -14,32 +14,27 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @EnableWebMvc
-//
 @SpringBootApplication
 public class KretaApplication {
-//
+
 	public static void main(String[] args) {
 		SpringApplication.run(KretaApplication.class, args);
+	}
 
-		// https://www.baeldung.com/swagger-2-documentation-for-spring-rest-api
-		// http://localhost:7777/v2/api-docs
-		// portszám 7777 ne felejtsük el!
-		@Configuration
-		@EnableSwagger2
-		@Import(SpringDataRestConfiguration.class)
-
-		class SpringFoxConfig {
-			@Bean
-			public Docket api() {
-				return new Docket(DocumentationType.SWAGGER_2)
-						.select()
-						.apis(RequestHandlerSelectors.any())
-						.paths(PathSelectors.any())
-						.build();
-			}
+	// https://www.baeldung.com/swagger-2-documentation-for-spring-rest-api
+	// http://localhost:7777/v2/api-docs
+	@Configuration
+	@EnableSwagger2
+	@Import(SpringDataRestConfiguration.class)
+	public class SpringFoxConfig {
+		@Bean
+		public Docket api() {
+			return new Docket(DocumentationType.SWAGGER_2)
+					.select()
+					.apis(RequestHandlerSelectors.any())
+					.paths(PathSelectors.any())
+					.build();
 		}
-
-
 	}
 
 }

@@ -9,17 +9,16 @@ import java.util.List;
 
 @RestController
 public class SubjectAPIController {
-
     @Autowired
     SubjectService service;
 
-    @GetMapping(value = "/api/subject", name = "List of all subjects.")
+    @GetMapping(value = "/api/subject",name = "List of all subjects.")
     public List<Subject> getAllSubjects() {
-        return service.getAllSubjects();
+        return service.getAllSubject();
     }
 
-    @PostMapping(value = "/api/subject", name= "Save subject")
-    public long saveSubject(@RequestBody Subject subject){
+    @PostMapping(value = "/api/subject",name = "Save subject subject")
+    public long saveSubject(@RequestBody Subject subject) {
         service.saveOrUpdate(subject);
         return subject.getId();
     }
@@ -34,8 +33,6 @@ public class SubjectAPIController {
     private void deleteSubject(@PathVariable("subjectid") Long subjectid) {
         service.delete(subjectid);
     }
-
-
 
 
 }

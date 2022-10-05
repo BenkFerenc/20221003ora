@@ -1,9 +1,9 @@
 package org.vasvari.kreta.service;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.vasvari.kreta.model.Subject;
 import org.vasvari.kreta.repo.interfaces.SubjectRepository;
-
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,9 +13,10 @@ public class SubjectService {
     @Autowired
     SubjectRepository subjectRepository;
 
-    public List<Subject> getAllSubjects() {
-        List<Subject> subjects = new ArrayList<Subject>();
-        subjectRepository.findAll().forEach(subject -> subjects.add(subject));
+    public List<Subject> getAllSubject() {
+        List<Subject> subjects=new ArrayList<>();
+        subjectRepository.findAll()
+                .forEach(subject -> subjects.add(subject));
         return subjects;
     }
 
